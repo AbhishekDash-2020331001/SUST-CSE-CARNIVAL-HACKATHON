@@ -54,7 +54,7 @@ const FeedPage = () => {
     }, []); // No need to include searchString as a dependency for the initial call
 
     return (
-        <div className="container mx-auto py-8 bg-pink-100">
+        <div className="container mx-auto py-8 bg-pink-100 h-screen">
             <FeedPageChild data={data} />
         </div>
     );
