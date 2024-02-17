@@ -4,6 +4,11 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const UserModel = require('../models/user')
 const TokenModel = require('../models/token')
+const OpenAI = require("openai");
+// Create an OpenAIApi instance directly
+/*const openai = new OpenAIApi({ apiKey: process.env.OPENAI_API_KEY });*/
+const openai = new OpenAI();
+
 
 function generateRandomToken(length) {
     return new Promise((resolve, reject) => {
@@ -204,7 +209,19 @@ exports.Logout = async(req,res)=>{
 }
 
 exports.getGPTresponse=async(req,res)=>{
-    //const
+    const {prompt}=req.body;
+    console.log(prompt+" hoy nai")
+    try {
+        const response = await openai.chat.completions.create({
+            messages: [{ role: "system", content: prompt }],
+            model: "gpt-3.5-turbo",
+          });
+        res.send(response)
+    } catch (error) {
+        console.log("Here is the error huhuhu")
+        console.log(error);
+        res.status(500).send(error)
+    }
 }
 
 

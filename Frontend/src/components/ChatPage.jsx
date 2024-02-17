@@ -5,23 +5,43 @@ const ChatPage = () => {
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
 
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (inputMessage.trim() !== '') {
-            setMessages([...messages, { text: inputMessage, sender: 'user' }]);
-            // Replace the following comment with your actual OpenAI API call
-            // CallOpenAI(inputMessage);
+            const userMessage = { text: inputMessage, sender: 'user' };
+            setMessages([...messages, userMessage]);
             setInputMessage('');
+
+            try {
+                const response = await CallOpenAI(inputMessage);
+                const assistantMessage = { text: response.choices[0].message.content, sender: 'assistant' };
+                setMessages((prevMessages) => [...prevMessages, assistantMessage]);
+            } catch (error) {
+                console.error('Error calling OpenAI API:', error);
+            }
         }
     };
 
-    // Replace this function with your actual OpenAI API call function
     const CallOpenAI = async (input) => {
         try {
-            // Your OpenAI API call logic goes here
-            // Example: const response = await fetch('your_openai_api_endpoint', { method: 'POST', body: JSON.stringify({ input }) });
-            // Update messages with the response from OpenAI
+            const response = await fetch('http://localhost:8000/auth/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                    
+                },
+                body: JSON.stringify({
+                    prompt: input
+                }),
+            });
+
+            if (response.ok) {
+                return await response.json();
+            } else {
+                console.error('Error calling backend API:', response.statusText);
+            }
         } catch (error) {
             console.error('Error calling OpenAI API:', error);
+            throw error;
         }
     };
 
