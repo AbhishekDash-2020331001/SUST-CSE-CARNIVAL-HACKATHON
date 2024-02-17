@@ -8,7 +8,7 @@
 }
 .text-field2
 {
-    @apply w-full px-3 py-1 border-slate-700 rounded-lg focus:outline-none focus:ring-2 ring-slate-900 hover:shrink-0 transform hover:scale-105 duration-500
+    @apply mb-1 w-full px-3 py-1 border-slate-700 rounded-lg focus:outline-none focus:ring-2 ring-slate-900 hover:shrink-0 transform hover:scale-105 duration-500
 }
 .lb
 {
@@ -16,13 +16,13 @@
 }
 .lb2
 {
-    @apply block text-[#1e2970] font-semibold mb-1 text-xl
+    @apply block text-[#1e2970] font-semibold mb-2 text-base
 }
 .btn
 {
-    @apply p-0 mb-0 mt-1 w-full bg-[#9a8cb0] text-[#22223b] font-bold py-2 px-4 rounded-lg focus:outline-none focus:bg-blue-950 focus:text-white hover:bg-[#dce1ea] hover:text-[#071328]
+    @apply p-0 mb-0 mt-3 w-full bg-[#9a8cb0] text-[#22223b] font-bold py-2 px-4 rounded-lg focus:outline-none focus:bg-blue-950 focus:text-white hover:bg-[#dce1ea] hover:text-[#071328]
 }
 
 .custom-shadow {
-    text-shadow: 0 0 5px rgba(165, 153, 215, 0.9);
+    text-shadow: 0 0 5px rgba(190, 91, 77, 0.9);
 }

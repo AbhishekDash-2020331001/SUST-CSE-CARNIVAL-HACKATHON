@@ -74,9 +74,9 @@ const LoginPage = () => {
 
     return (
         <div className="h-screen bg-[url('../output/pinkroses.jpg')] bg-cover bg-center flex flex-col justify-center items-center">
-            <div className="-ml-20 flex flex-col items-center justify-center h-3/4 w-1/4 bg-[#e0d2e4] shadow-lg rounded-2xl hover:shrink-0 transform hover:scale-105 duration-500">
+            <div className="-ml-20 flex flex-col items-center justify-center h-3/4 w-1/4 bg-[#e6d9ea] shadow-lg rounded-2xl hover:shrink-0 transform hover:scale-105 duration-500">
             <h2 className="text-5xl font-bold font-mono mb-7 text-[#155b98] shadow-lg">Login</h2>
-            <form onSubmit={handleLoginSubmit} className="flex flex-col items-center w-4/5">
+            <form onSubmit={handleLoginSubmit} className="flex flex-col w-4/5">
                 <label className="lb">Email</label>
                 <input
                     type="email"

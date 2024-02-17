@@ -34,15 +34,15 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-gray-800 p-4">
+        <nav className="bg-[hsl(317,32%,56%)] p-4">
             <div className="container mx-auto flex justify-between items-center">
-                <div className="text-white font-bold text-xl">
+                <div className="pl-3 text-white font-bold text-2xl hover:shrink-0 transform hover:scale-105 duration-500">
                     QUEEN
                 </div>
-                <div className="space-x-4">
-                    <Link to="/feed" className="text-white hover:text-gray-300">Feed</Link>
-                    <Link to="/talk" className="text-white hover:text-gray-300">Talk with Assistant</Link>
-                    <button onClick={handleLogout} className="text-white hover:text-gray-300">Logout</button>
+                <div className="space-x-9">
+                    <Link to="/feed" className=" text-white  hover:text-slate-300">Feed</Link>
+                    <Link to="/talk" className="text-white  hover:text-slate-300">Talk with Assistant</Link>
+                    <button onClick={handleLogout} className="text-white  hover:shrink-0 transform hover:scale-105 duration-500">Logout</button>
                 </div>
             </div>
         </nav>
