@@ -60,52 +60,53 @@ const SignUpPage = () => {
             <div className="h-5/6 w-2/7 bg-[rgb(228,221,228)] p-8 pt-4 rounded-lg shadow-md max-w-md w-full hover:shrink-0 transform hover:scale-105 duration-500 shadow-gray-500">
                 <h2 className="text-2xl font-bold mb-2 text-[#22223b]">Sign Up</h2>
                 <form onSubmit={handleSignUpSubmit} className="mb-4">
-                    <label className="lb">Name:</label>
+                    <label className="lb2">Name:</label>
                     <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="text-field"
+                        className="text-field2"
                         placeholder="Type your name..."
                         required
                     />
 
-                    <label className="lb">Username:</label>
+                    <label className="lb2">Username:</label>
                     <input
                         type="text"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
-                        className="text-field"
+                        className="text-field2"
                         placeholder="Type the username..."
                         required
                     />
 
-                    <label className="lb">Email:</label>
+                    <label className="lb2">Email:</label>
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="text-field"
+                        className="text-field2"
                         placeholder="Enter your email address..."
                         required
                     />
 
-                    <label className="lb">Password:</label>
+                    <label className="lb2">Password:</label>
                     <input
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="text-field"
-                        placeholder="Confirm password..."
+                        className="text-field2"
+                        placeholder="Enter your password..."
                         required
                     />
 
-                    <label className="lb">Confirm Password:</label>
+                    <label className="lb2">Confirm Password:</label>
                     <input
                         type="password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className="text-field"
+                        className="text-field2 mb-2"
+                        placeholder="Confirm password..."
                         required
                     />
 

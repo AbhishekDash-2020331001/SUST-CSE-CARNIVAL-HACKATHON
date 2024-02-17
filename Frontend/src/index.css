@@ -4,17 +4,25 @@
 
 .text-field
 {
-    @apply w-full mb-1 px-3 py-2 border-slate-700 rounded-lg focus:outline-none focus:ring-2 ring-slate-900 hover:shrink-0 transform hover:scale-105 duration-500
+    @apply w-full mb-3 px-3 py-2 border-slate-700 rounded-lg focus:outline-none focus:ring-2 ring-slate-900 hover:shrink-0 transform hover:scale-105 duration-500
+}
+.text-field2
+{
+    @apply w-full px-3 py-1 border-slate-700 rounded-lg focus:outline-none focus:ring-2 ring-slate-900 hover:shrink-0 transform hover:scale-105 duration-500
 }
 .lb
 {
-    @apply block text-[#1e2970] font-bold mb-1
+    @apply block text-[#1e2970] font-semibold mb-3 text-2xl
+}
+.lb2
+{
+    @apply block text-[#1e2970] font-semibold mb-1 text-xl
 }
 .btn
 {
-    @apply p-0 mb-0 mt-1 w-full bg-[#9a8cb0] text-[#22223b] font-bold py-2 px-4 rounded-lg focus:outline-none focus:bg-blue-950 hover:bg-[#dce1ea] hover:text-[#071328]
+    @apply p-0 mb-0 mt-1 w-full bg-[#9a8cb0] text-[#22223b] font-bold py-2 px-4 rounded-lg focus:outline-none focus:bg-blue-950 focus:text-white hover:bg-[#dce1ea] hover:text-[#071328]
 }
 
 .custom-shadow {
-    text-shadow: 0 0 5px rgba(26, 11, 89, 0.9);
+    text-shadow: 0 0 5px rgba(165, 153, 215, 0.9);
 }

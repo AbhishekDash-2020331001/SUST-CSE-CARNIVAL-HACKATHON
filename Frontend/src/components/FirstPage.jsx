@@ -3,19 +3,18 @@ import { Link } from 'react-router-dom';
 
 const FirstPage = () => {
     return (
-        <div className=" flex flex-col h-screen bg-[url('../output/bg111.jpg')] bg-cover bg-center w-screen justify-center items-center">
-            <div className="flex">
-                 <h1 className="-ml-24 sm:-ml-20 mt-16 text-[9vw] text-9xl font-bold font-serif text-[#1d3557] custom-shadow hover:shrink-0 transform hover:scale-105 duration-500">Queen</h1>
-                 <div className="absolute bottom-1/3 left-1/4 flex space-x-10 -ml-10">
-                      <Link to="/login">
-                     <button className="bg-[#d19fb9] text-[#502528] py-2 px-4 rounded-full text-3xl focus:outline-none  hover:bg-[#d0d7e2] hover:text-[#5b285b] shadow-md hover:shrink-0 transform hover:scale-105 duration-500">Login</button>
-                     </Link>
-                      <Link to="/signup">
-                      <button className="bg-[#d19fb9] text-[#502528] py-2 px-4 text-3xl rounded-full focus:outline-none hover:bg-[#d0d7e2] hover:text-[#5b285b] shadow-md hover:shrink-0 transform hover:scale-105 duration-500">Sign Up</button>
-                      </Link>
+        <div className="flex flex-col h-screen bg-[url('../output/bg111.jpg')] bg-cover bg-center w-screen justify-center items-center">
+             <h1 className="-mt-12 mb-10 text-8xl font-bold font-serif text-[#698dc1] custom-shadow hover:shrink-0 transform hover:scale-105 duration-500 first-letter:text-9xl">QUEEN</h1>
+                 <div className="-mr-20 mt-16 flex justify-center items-center space-x-10">
+                    <Link to="/login">
+                        <button className="ml-12 text-3xl px-8 py-4 bg-[#ab9bc1] text-[#251b25] rounded-full focus:outline-none focus:bg-blue-950 hover:bg-[#dce1ea] hover:text-[#132542] hover:shrink-0 transform hover:scale-105 duration-500">Login</button>
+                    </Link>
+                    <Link to="/signup">
+                        <button className="text-3xl px-8 py-4 bg-[#ab9bc1] text-[#251b25] rounded-full focus:outline-none focus:bg-blue-950 hover:bg-[#dce1ea] hover:text-[#132542] hover:shrink-0 transform hover:scale-105 duration-500">Sign Up</button>
+                    </Link>
                  </div>
-            </div>
         </div>
+
     );
 };
 
