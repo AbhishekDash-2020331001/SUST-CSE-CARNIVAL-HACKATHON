@@ -73,34 +73,39 @@ const LoginPage = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen">
-            <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <div className="h-screen bg-[url('../output/pinkroses.jpg')] bg-cover bg-center flex flex-col justify-center items-center">
+            <div className="flex flex-col items-center justify-center h-3/4 w-2/5 bg-[#e0d2e4] shadow-lg rounded-2xl hover:shrink-0 transform hover:scale-105 duration-500">
+            <h2 className="text-5xl font-bold font-mono mb-7 text-[#155b98] shadow-lg">Login</h2>
             <form onSubmit={handleLoginSubmit} className="flex flex-col items-center">
-                <label className="mb-2">Email:</label>
+                <label className="lb">Email</label>
                 <input
                     type="email"
                     value={email}
                     onChange={handleEmailChange}
-                    className="mb-4 p-2 border border-gray-300 rounded"
+                    className="text-field"
+                    placeholder="Enter your email..."
                     required
                 />
 
-                <label className="mb-2">Password:</label>
+                <label className="lb">Password</label>
                 <input
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
-                    className="mb-4 p-2 border border-gray-300 rounded"
+                    className="text-field"
+                    placeholder="Enter the password..."
                     required
+            
                 />
                 {loginError && <p className="text-red-500 mb-4">Email or password is incorrect</p>}
-                <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded">
-                    Login
+                <button type="submit" className="btn mt-4">
+                    Sign in
                 </button>
             </form>
             <p className="mt-4">
-                Don't have an account? <Link to="/signup" className="text-blue-500">Register here</Link>
+                Don't have an account? <Link to="/signup" className="text-blue-500 hover:text-[#531044]">Register here</Link>
             </p>
+            </div>
         </div>
     );
 };

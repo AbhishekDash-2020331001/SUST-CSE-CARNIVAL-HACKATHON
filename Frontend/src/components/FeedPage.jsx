@@ -33,7 +33,7 @@ const FeedPage = () => {
     }, []);
 
     return (
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto py-8 bg-pink-100">
             <FeedPageChild data={data} />
         </div>
     );
