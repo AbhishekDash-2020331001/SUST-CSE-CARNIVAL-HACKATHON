@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useHistory from react-router-dom
 import Navbar from './Navbar';
 
 const ChatPage = () => {
+    const [showResult, setShowResult] = useState(false);
+    const navigate=useNavigate();
     const [messages, setMessages] = useState([]);
     const [inputMessage, setInputMessage] = useState('');
+    //const [gRes, setGRes] = useState(false);
+    //const history = useHistory();  // Create a history object using useHistory
 
     const handleSendMessage = async () => {
         if (inputMessage.trim() !== '') {
@@ -21,13 +26,25 @@ const ChatPage = () => {
         }
     };
 
+    const handleSendAndViewResult = async () => {
+        // Similar logic as handleSendMessage
+        await handleSendMessage();
+
+        // Set gRes to true to conditionally render the Result component
+        //setGRes(true);
+
+        const resultUrl = `/result?searchString=${encodeURIComponent(inputMessage)}`;
+        window.open(resultUrl, '_blank');
+        // Redirect to the Result page with the inputMessage as a query parameter
+        //history.push(`/result?searchString=${encodeURIComponent(inputMessage)}`);
+    };
+
     const CallOpenAI = async (input) => {
         try {
             const response = await fetch('http://localhost:8000/auth/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
-                    
                 },
                 body: JSON.stringify({
                     prompt: input
@@ -45,6 +62,7 @@ const ChatPage = () => {
         }
     };
 
+    // Conditionally render the Result component based on gRes
     return (
         <div className="h-screen flex flex-col">
             <Navbar />
@@ -53,9 +71,7 @@ const ChatPage = () => {
                 {messages.map((message, index) => (
                     <div
                         key={index}
-                        className={`mb-4 max-w-md ${
-                            message.sender === 'user' ? 'self-end' : 'self-start'
-                        }`}
+                        className={`mb-4 max-w-md ${message.sender === 'user' ? 'ml-auto' : ''}`}
                     >
                         <div
                             className={`p-4 rounded-lg shadow-md ${
@@ -83,6 +99,12 @@ const ChatPage = () => {
                         className="w-20 px-4 py-2 bg-[#ba7dba] text-white rounded-lg hover:bg-[#c9a2d4] hover:text-blue-950"
                     >
                         Send
+                    </button>
+                    <button
+                        onClick={handleSendAndViewResult}
+                        className="w-28 px-4 py-2 bg-[#ba7dba] text-white rounded-lg hover:bg-[#c9a2d4] hover:text-blue-950"
+                    >
+                        Send and View Result
                     </button>
                 </div>
             </div>

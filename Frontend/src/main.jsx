@@ -8,6 +8,7 @@ import LoginPage from './components/LoginPage.jsx'
 import SignUpPage from './components/SignUpPage.jsx'
 
 import ChatPage from './components/ChatPage.jsx'
+import Result from './components/Result.jsx'
 import './index.css'
 
 const router=createBrowserRouter([
@@ -34,6 +35,10 @@ const router=createBrowserRouter([
   {
     path:'/talk',
     element:<ChatPage/>
+  },
+  {
+    path:'/result',
+    element:<Result/>
   }
 ])
 
